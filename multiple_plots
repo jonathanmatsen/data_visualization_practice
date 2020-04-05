@@ -49,3 +49,16 @@ plt.plot(unrate[24:36]['MONTH'], unrate[24:36]['VALUE'], c='green')
 plt.plot(unrate[36:48]['MONTH'], unrate[36:48]['VALUE'], c='orange')
 plt.plot(unrate[48:60]['MONTH'], unrate[48:60]['VALUE'], c='black')
 plt.show()
+
+#adding a legend
+fig = plt.figure(figsize=(10,6))
+colors = ['red', 'blue', 'green', 'orange', 'black']
+labels = ['1948', '1949', '1950', '1951', '1952']
+for i in range(5):
+    start_index = i*12
+    end_index = (i+1)*12
+    subset = unrate[start_index:end_index]
+    plt.plot(subset['MONTH'], subset['VALUE'], c=colors[i], label=labels[i])
+    plt.legend(loc='upper left')
+
+plt.show()
