@@ -51,3 +51,11 @@ ax.set_ylabel('Rating Source')
 ax.set_xlabel('Average Rating')
 plt.title('Average User Rating For Avengers: Age of Ultron (2015)')
 plt.show()
+
+#scatter plots
+fix, ax = plt.subplots()
+
+ax.scatter(norm_reviews['Fandango_Ratingvalue'], norm_reviews['RT_user_norm'])
+ax.set_xlabel('Fandango')
+ax.set_ylabel('Rotten Tomatoes')
+plt.show()
