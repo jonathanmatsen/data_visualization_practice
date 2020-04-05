@@ -1,0 +1,21 @@
+#adding data
+fig = plt.figure()
+
+ax1 = fig.add_subplot(2, 1, 1)
+ax2 = fig.add_subplot(2, 1, 2)
+
+ax1.plot(unrate['DATE'].head(12), unrate['VALUE'].head(12))
+
+ax2.plot(unrate['DATE'].iloc[12:24], unrate['VALUE'].iloc[12:24])
+
+plt.show()
+
+#formatting and spacing
+fig = plt.figure(figsize=(12, 5))
+ax1 = fig.add_subplot(2,1,1)
+ax2 = fig.add_subplot(2,1,2)
+ax1.plot(unrate[0:12]['DATE'], unrate[0:12]['VALUE'])
+ax1.set_title('Monthly Unemployment Rate, 1948')
+ax2.plot(unrate[12:24]['DATE'], unrate[12:24]['VALUE'])
+ax2.set_title('Monthly Unemployment Rate, 1949')
+plt.show()
