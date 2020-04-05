@@ -19,3 +19,33 @@ ax1.set_title('Monthly Unemployment Rate, 1948')
 ax2.plot(unrate[12:24]['DATE'], unrate[12:24]['VALUE'])
 ax2.set_title('Monthly Unemployment Rate, 1949')
 plt.show()
+
+#comparing across multiple years
+fig = plt.figure(figsize=(12, 12))
+
+for i in range(5):
+    ax = fig.add_subplot(5, 1, i+1)
+    start_index = i*12
+    end_index = (i+1)*12
+    subset = unrate[start_index:end_index]
+    ax.plot(subset['DATE'], subset['VALUE'])
+
+plt.show()
+
+#overlaying line charts
+unrate['MONTH'] = unrate['DATE'].dt.month
+
+fig = plt.figure(figsize=(6, 3))
+plt.plot(unrate[0:12]['MONTH'], unrate[0:12]['VALUE'], c='red')
+plt.plot(unrate[12:24]['MONTH'], unrate[12:24]['VALUE'], c='blue')
+plt.show()
+
+#adding more lines
+fig = plt.figure(figsize=(10, 6))
+
+plt.plot(unrate[0:12]['MONTH'], unrate[0:12]['VALUE'], c='red')
+plt.plot(unrate[12:24]['MONTH'], unrate[12:24]['VALUE'], c='blue')
+plt.plot(unrate[24:36]['MONTH'], unrate[24:36]['VALUE'], c='green')
+plt.plot(unrate[36:48]['MONTH'], unrate[36:48]['VALUE'], c='orange')
+plt.plot(unrate[48:60]['MONTH'], unrate[48:60]['VALUE'], c='black')
+plt.show()
