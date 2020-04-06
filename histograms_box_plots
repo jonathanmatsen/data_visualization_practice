@@ -23,3 +23,12 @@ ax4.set_title('Distribution of IMDB Ratings')
 ax4.set_ylim(0, 50)
 
 plt.show()
+
+#box plot
+
+fig, ax = plt.subplots()
+
+ax.boxplot(norm_reviews['RT_user_norm'])
+ax.set_ylim(0,5)
+ax.set_xticklabels(['Rotten Tomatoes'])
+plt.show()
