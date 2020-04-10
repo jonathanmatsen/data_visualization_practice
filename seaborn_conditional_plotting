@@ -11,3 +11,10 @@ plt.show()
 sns.kdeplot(titanic['Age'], shade=True)
 plt.xlabel('Age')
 plt.show()
+
+#modifying the appearance of plots
+sns.set_style("white")
+sns.kdeplot(titanic['Age'], shade=True)
+plt.xlabel('Age')
+sns.despine(left=True, bottom=True)
+plt.show()
