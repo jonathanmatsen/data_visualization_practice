@@ -24,3 +24,9 @@ g = sns.FacetGrid(titanic, col="Pclass", size=6)
 g.map(sns.kdeplot, "Age", shade=True)
 sns.despine(left=True, bottom=True)
 plt.show()
+
+#conditional plots using two conditions
+g = sns.FacetGrid(titanic, col="Survived", row="Pclass")
+g.map(sns.kdeplot, "Age", shade=True)
+sns.despine(left=True, bottom=True)
+plt.show()
