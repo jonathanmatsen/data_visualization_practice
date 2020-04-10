@@ -36,3 +36,9 @@ g = sns.FacetGrid(titanic, col="Survived", row="Pclass", hue="Sex", size=3)
 g.map(sns.kdeplot, "Age", shade=True)
 sns.despine(left=True, bottom=True)
 plt.show()
+
+#adding a legend
+g = sns.FacetGrid(titanic, col='Survived', row='Pclass', hue='Sex', legend_out=True, size=3)
+g.map(sns.kdeplot, "Age", shade=True).add_legend()
+sns.despine(left=True, bottom=True)
+plt.show()
