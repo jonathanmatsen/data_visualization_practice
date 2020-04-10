@@ -1,0 +1,13 @@
+#create histogram with kde plot
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.distplot(titanic['Age'])
+
+plt.show()
+
+#create kernel density plot
+sns.kdeplot(titanic['Age'], shade=True)
+plt.xlabel('Age')
+plt.show()
